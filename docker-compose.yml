@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  airflow:
+    image: apache/airflow:2.8.1
+    container_name: airflow
+    command: airflow standalone
+    restart: always
+    environment:
+      - AIRFLOW_HOME=/apach_airflow_example/airflow
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/apach_airflow_example
